@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Add product</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 5px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <table style="width:100%">
+        <caption>Danh muc san pham</caption>
+        <tr>
+            <th>Stt</th>
+            <th>id</th>
+            <th>Ten</th>
+            <th>Mo ta</th>
+            <th>Hinh anh</th>
+            <th>Id video</th>
+            <th>Xu ly</th>
+        </tr>
+        <% for (var i = 0; i < arrProducts.length; i++) { %>
+        <tr>
+            <th><%= i + 1 %></th>
+            <th><%= arrProducts[i].id %></th>
+            <th><%= arrProducts[i].name %></th>
+            <th><%= arrProducts[i].desc %></th>
+            <th><img class="thumb" src="images/background/<%= arrProducts[i].image %>" alt="" /></th>
+            <th><%= arrProducts[i].idVideo %></th>
+            <th><a href="/sua/<%= arrProducts[i].id %>">SUA</a>
+            <br/>
+            <a href="/xoa/<%= arrProducts[i].id %>" onclick="return confirm('Ban co chac xoa?');">XOA</a>
+            </th>
+        </tr>
+        <% } %>
+    </table>
+	<form action="/themProduct" method="POST">
+    <input type="text" name="idProduct" placeholder="id san pham"/>
+        <br>
+        <input type="text" name="nameProduct" placeholder="ten san pham"/>
+        <br>
+        <input type="text" name="description" placeholder="mo ta"/>
+        <br>
+        <input type="text" name="imageProduct" placeholder="hinh anh"/>
+        <br>
+        <input type="text" name="idVideoProduct" placeholder="idVideo"/>
+        <br>
+        <button>ADD PRODUCT</button>
+    </form>
+</body>
+</html>

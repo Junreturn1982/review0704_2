@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Update product</title>
+</head>
+<body>
+	<form action="/sua" method="POST">
+        <input type="hidden" name="idProduct" placeholder="" value="<%= product.id %>"/>
+        <input type="text" name="nameProduct" placeholder="ten san pham" value="<%= product.name %>"/>
+        <br>
+        <input type="text" name="description" placeholder="mo ta" value="<%= product.desc %>"/>
+        <br>
+        <input type="text" name="imageProduct" placeholder="hinh anh" value="<%= product.image %>"/>
+        <br>
+        <input type="text" name="idVideoProduct" placeholder="idVideo" value="<%= product.idVideo %>"/>
+        <br>
+        <button>UPDATE PRODUCT</button>
+    </form>
+</body>
+</html>
